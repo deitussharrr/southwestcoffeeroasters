@@ -1,245 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Southwest Coffee Roasters | Chennai</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southwest Coffee Roasters | Where Every Sip Feels Like Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
     <header>
-      <nav aria-label="Primary navigation">
-        <div>
-          <p>Southwest Coffee Roasters</p>
-        </div>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#coffee">Coffee</a></li>
-          <li><a href="#work-pods">Work Pods</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div>
-          <a href="#order">Order Now</a>
-        </div>
-      </nav>
+        <nav class="container">
+            <div class="logo">SOUTHWEST COFFEE ROASTERS</div>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Coffee</a></li>
+                <li><a href="#">Work Pods</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-small">ORDER NOW</a>
+            </div>
+        </nav>
     </header>
 
     <main>
-      <section id="hero" aria-labelledby="hero-heading">
-        <div>
-          <p>Curated in Chennai</p>
-          <h1 id="hero-heading">Where Every Sip Feels Like Home</h1>
-          <p>
-            Artisanal coffee, handcrafted meals, and a cozy space to meet,
-            work, and unwind.
-          </p>
-          <div>
-            <a href="#menu">View Menu</a>
-            <a href="#contact">Visit Us</a>
-          </div>
-        </div>
-        <div aria-label="Hero image composition">
-          <figure>
-            <div role="img" aria-label="Coffee image placeholder: latte or espresso">
-              Coffee image placeholder (latte/espresso)
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-content">
+                <h1>Where Every Sip Feels Like <em>Home</em></h1>
+                <p class="subtitle">Artisanal coffee, handcrafted meals, and a cozy space to meet, work, and unwind.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary">VIEW MENU</a>
+                    <a href="#" class="btn btn-link">VISIT US</a>
+                </div>
             </div>
-          </figure>
-          <figure>
-            <div role="img" aria-label="Cafe interior image placeholder">
-              Cafe interior image placeholder
+            <div class="hero-images">
+                <div class="image-stack">
+                    <img src="assets/images/hero-coffee.jpg" alt="Specialty Coffee" class="img-main">
+                    <img src="assets/images/hero-interior.jpg" alt="Cafe Interior" class="img-overlay">
+                    <img src="assets/images/hero-food.jpg" alt="Handcrafted Meals" class="img-overlay-2">
+                </div>
             </div>
-          </figure>
-          <figure>
-            <div role="img" aria-label="Food dishes image placeholder">
-              Food dishes image placeholder
+        </section>
+
+        <!-- Quick Info Strip -->
+        <section class="info-strip">
+            <div class="container info-grid">
+                <div class="info-item">
+                    <span class="label">LOCATION</span>
+                    <p>Nungambakkam, Chennai</p>
+                </div>
+                <div class="info-item">
+                    <span class="label">TIMINGS</span>
+                    <p>7 AM – 11 PM</p>
+                </div>
+                <div class="info-tags">
+                    <span class="tag">Work-friendly</span>
+                    <span class="tag">Free WiFi</span>
+                    <span class="tag">Cozy seating</span>
+                    <span class="tag">Breakfast & brunch</span>
+                </div>
             </div>
-          </figure>
-        </div>
-      </section>
+        </section>
 
-      <section aria-label="Quick info">
-        <ul>
-          <li><strong>Location:</strong> Nungambakkam, Chennai</li>
-          <li><strong>Timings:</strong> 7 AM - 11 PM</li>
-        </ul>
-        <ul aria-label="Cafe tags">
-          <li>Work-friendly</li>
-          <li>Free WiFi</li>
-          <li>Cozy seating</li>
-          <li>Breakfast &amp; brunch</li>
-        </ul>
-      </section>
-
-      <section id="about" aria-labelledby="story-heading">
-        <div>
-          <h2 id="story-heading">Our Story</h2>
-          <p>
-            Founded with a passion for speciality coffee, Southwest Coffee
-            Roasters brings together carefully sourced beans and thoughtfully
-            crafted dishes. Built as a space for both relaxation and
-            productivity, it's a place where conversations, ideas, and coffee
-            come together.
-          </p>
-          <p>
-            Founder trained in speciality coffee and inspired by a modern cafe
-            concept.
-          </p>
-        </div>
-        <div>
-          <div role="img" aria-label="Our Story section image placeholder">
-            Cafe interior image placeholder
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="mission-heading">
-        <div>
-          <div role="img" aria-label="Our Mission section image placeholder">
-            Mission image placeholder
-          </div>
-        </div>
-        <div>
-          <h2 id="mission-heading">Our Mission</h2>
-          <p>
-            To create a welcoming space that blends great coffee, quality food,
-            and a comfortable work-friendly environment. We focus on fresh
-            ingredients, balanced flavors, and a community-driven experience.
-          </p>
-        </div>
-      </section>
-
-      <section id="menu" aria-labelledby="serve-heading">
-        <h2 id="serve-heading">What We Serve</h2>
-        <div>
-          <article>
-            <h3>Specialty Coffee</h3>
-            <p>Espresso, Cappuccino, Latte.</p>
-          </article>
-          <article>
-            <h3>Iced Coffees</h3>
-            <p>Biscoff, Tiramisu, Nutella.</p>
-          </article>
-          <article>
-            <h3>Breakfast Plates</h3>
-            <p>Comforting breakfast options for all-day cafe starts.</p>
-          </article>
-          <article>
-            <h3>Continental &amp; Italian Mains</h3>
-            <p>Hearty mains crafted for lunch and dinner gatherings.</p>
-          </article>
-          <article>
-            <h3>Vegan Options</h3>
-            <p>Plant-forward dishes made with balanced flavors.</p>
-          </article>
-          <article>
-            <h3>Desserts</h3>
-            <p>Sweet finishes to pair with your favorite coffee.</p>
-          </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="featured-heading">
-        <h2 id="featured-heading">Featured Items</h2>
-        <div>
-          <article>
-            <div role="img" aria-label="Tiramisu Iced Latte image placeholder">
-              Image placeholder
+        <!-- Our Story Section -->
+        <section class="story container">
+            <div class="story-grid">
+                <div class="story-text">
+                    <span class="section-label">OUR STORY</span>
+                    <h2>A Passion for Speciality Coffee</h2>
+                    <p>Founded with a passion for speciality coffee, Southwest Coffee Roasters brings together carefully sourced beans and thoughtfully crafted dishes.</p>
+                    <p>Built as a space for both relaxation and productivity, it’s a place where conversations, ideas, and coffee come together.</p>
+                </div>
+                <div class="story-image">
+                    <img src="assets/images/story-interior.jpg" alt="Southwest Coffee Interior">
+                </div>
             </div>
-            <h3>Tiramisu Iced Latte</h3>
-            <p>Chilled coffee layered with creamy tiramisu flavor notes.</p>
-          </article>
-          <article>
-            <div role="img" aria-label="Spanish Latte image placeholder">
-              Image placeholder
-            </div>
-            <h3>Spanish Latte</h3>
-            <p>Smooth espresso with sweetened milk and bold aroma.</p>
-          </article>
-          <article>
-            <div role="img" aria-label="Peri Peri Fries image placeholder">
-              Image placeholder
-            </div>
-            <h3>Peri Peri Fries</h3>
-            <p>Crispy fries tossed in a spicy peri peri seasoning blend.</p>
-          </article>
-          <article>
-            <div role="img" aria-label="Tiramisu Cheesecake image placeholder">
-              Image placeholder
-            </div>
-            <h3>Tiramisu Cheesecake</h3>
-            <p>Decadent cheesecake with coffee and cocoa-inspired layers.</p>
-          </article>
-        </div>
-      </section>
+        </section>
 
-      <section id="work-pods" aria-labelledby="pods-heading">
-        <div>
-          <h2 id="pods-heading">Work. Meet. Create.</h2>
-          <p>
-            Private work pods designed for focused sessions, meetings, and
-            creative work. Fully redeemable on food and beverages.
-          </p>
-          <a href="#contact">Book a Pod</a>
-        </div>
-        <div>
-          <div role="img" aria-label="Work pod image placeholder">
-            Work pod image placeholder
-          </div>
-        </div>
-      </section>
+        <!-- Our Mission Section -->
+        <section class="mission container">
+            <div class="mission-grid">
+                <div class="mission-image">
+                    <img src="assets/images/mission-food.jpg" alt="Quality Food">
+                </div>
+                <div class="mission-text">
+                    <span class="section-label">OUR MISSION</span>
+                    <h2>Blending Coffee, Food & Community</h2>
+                    <p>To create a welcoming space that blends great coffee, quality food, and a comfortable work-friendly environment. We focus on fresh ingredients, balanced flavors, and a community-driven experience.</p>
+                </div>
+            </div>
+        </section>
 
-      <section aria-labelledby="testimonials-heading">
-        <h2 id="testimonials-heading">Testimonials</h2>
-        <div>
-          <article>
-            <blockquote>
-              "Great place for a peaceful retreat with friends."
-            </blockquote>
-          </article>
-          <article>
-            <blockquote>"Amazing breakfast spread and ambience."</blockquote>
-          </article>
-          <article>
-            <blockquote>"Perfect spot to work and relax."</blockquote>
-          </article>
-        </div>
-      </section>
+        <!-- Signature Menu Section -->
+        <section class="menu-categories">
+            <div class="container">
+                <h2 class="centered-title">What We Serve</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <h3>Specialty Coffee</h3>
+                        <p>Espresso, Cappuccino, Latte</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Iced Coffees</h3>
+                        <p>Biscoff, Tiramisu, Nutella</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Breakfast Plates</h3>
+                        <p>Freshly prepared morning favorites</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Continental & Italian</h3>
+                        <p>Hearty mains and balanced flavors</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Vegan Options</h3>
+                        <p>Plant-based delights for everyone</p>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Desserts</h3>
+                        <p>Sweet endings to your visit</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Items Section -->
+        <section class="featured">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Favorites</h2>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/item-tiramisu-latte.webp" alt="Tiramisu Iced Latte">
+                        </div>
+                        <h3>Tiramisu Iced Latte</h3>
+                        <p>A rich, dessert-inspired coffee experience.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/item-spanish-latte.jpg" alt="Spanish Latte">
+                        </div>
+                        <h3>Spanish Latte</h3>
+                        <p>Sweetened condensed milk meets bold espresso.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/item-breakfast.jpg" alt="Breakfast Spread">
+                        </div>
+                        <h3>Breakfast Spread</h3>
+                        <p>The perfect start to your productive day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Pods Section -->
+        <section class="work-pods container">
+            <div class="pods-grid">
+                <div class="pods-content">
+                    <span class="section-label">UNIQUE FEATURE</span>
+                    <h2>Work. Meet. Create.</h2>
+                    <p>Private work pods designed for focused sessions, meetings, and creative work. Fully redeemable on food and beverages.</p>
+                    <a href="#" class="btn btn-primary">BOOK A POD</a>
+                </div>
+                <div class="pods-image">
+                    <img src="assets/images/work-pods.jpg" alt="Private Work Pods">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="centered-title">Guest Experiences</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Great place for a peaceful retreat with friends."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Amazing breakfast spread and ambience."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Perfect spot to work and relax."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter container">
+            <div class="newsletter-content">
+                <div class="icon-mail">✉️</div>
+                <h2>Join the Gallery Circle</h2>
+                <p>Be the first to experience our seasonal harvests and exclusive community events.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <footer id="contact">
-      <section>
-        <h2>Southwest Coffee Roasters</h2>
-        <p>
-          Artisanal coffee and crafted meals in a cozy Chennai setting for
-          conversations, productivity, and community.
-        </p>
-      </section>
-
-      <section>
-        <h3>Navigation</h3>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#coffee">Coffee</a></li>
-          <li><a href="#work-pods">Work Pods</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Contact</h3>
-        <p><strong>Phone:</strong> +91 00000 00000</p>
-        <p><strong>Location:</strong> Nungambakkam, Chennai</p>
-      </section>
-
-      <section>
-        <h3>Social</h3>
-        <ul>
-          <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
-        </ul>
-      </section>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">SOUTHWEST COFFEE ROASTERS</div>
+                <p>Artisanal coffee and handcrafted meals in the heart of Chennai.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Coffee</a></li>
+                    <li><a href="#">Work Pods</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>CONTACT</h4>
+                <p>Nungambakkam, Chennai</p>
+                <p>+91 98765 43210</p>
+                <p><a href="#">Instagram</a></p>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>© 2024 Southwest Coffee Roasters. Crafted with intention.</p>
+        </div>
     </footer>
-  </body>
+</body>
 </html>
