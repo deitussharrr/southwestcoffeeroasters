@@ -3,384 +3,443 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Southwest Coffee Roasters</title>
+    <title>Southwest Coffee Roasters | Chennai</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
-        --cream: #f3eee5;
-        --paper: #f8f3ec;
-        --text: #171311;
-        --muted: #6a625b;
-        --accent: #a55024;
-        --dark: #26120f;
-        --card: #2f1714;
-        --line: #ddd3c5;
-        --shadow: 0 14px 30px rgba(39, 18, 10, 0.12);
+        --bg: #f4ede3;
+        --paper: #f9f4ec;
+        --text: #191310;
+        --muted: #70635a;
+        --accent: #b75a2a;
+        --dark: #2a130f;
+        --dark-soft: #40201a;
+        --line: #d9cbbb;
+        --chip: #dce9bf;
+        --shadow: 0 14px 40px rgba(41, 16, 10, 0.16);
       }
 
       * { box-sizing: border-box; }
+      html, body { margin: 0; }
       body {
-        margin: 0;
-        background: var(--cream);
+        font-family: Inter, system-ui, sans-serif;
         color: var(--text);
-        font-family: Inter, system-ui, -apple-system, sans-serif;
-        line-height: 1.5;
+        background: var(--bg);
       }
-
-      img { width: 100%; display: block; object-fit: cover; }
+      h1, h2, h3, h4 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        line-height: 0.96;
+      }
+      p { margin: 0; line-height: 1.6; }
       a { color: inherit; text-decoration: none; }
+      img { width: 100%; display: block; object-fit: cover; }
 
-      .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+      .container { width: min(1150px, 92vw); margin: 0 auto; }
+      .section { padding: 90px 0; }
+      .eyebrow { font-size: 11px; letter-spacing: 0.17em; text-transform: uppercase; color: #988677; }
 
-      .topbar {
+      header { padding-top: 24px; }
+      .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 28px 0;
-        font-size: 14px;
+        gap: 18px;
       }
-
       .brand {
         font-family: "Cormorant Garamond", serif;
-        font-size: 30px;
+        font-size: 33px;
         letter-spacing: 0.03em;
       }
-
-      .nav-links {
-        display: flex;
+      .links {
         list-style: none;
-        gap: 24px;
         margin: 0;
         padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-size: 13px;
+      }
+      .order-btn {
+        border: 1px solid #1b1411;
+        background: #1d1411;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        font-size: 11px;
+        padding: 12px 18px;
       }
 
       .hero {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: 44px;
         align-items: start;
-        padding-bottom: 80px;
+        padding: 34px 0 78px;
       }
-
-      .tag {
+      .hero .chip {
         display: inline-block;
-        border-radius: 100px;
-        background: #dceac0;
-        padding: 6px 13px;
+        background: var(--chip);
+        border-radius: 999px;
+        padding: 6px 12px;
+        text-transform: uppercase;
+        letter-spacing: .12em;
         font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
       }
-
-      h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 0.95; margin: 0; font-weight: 500; }
-      .hero h1 { font-size: clamp(64px, 9vw, 110px); margin: 16px 0; max-width: 420px; }
+      .hero h1 {
+        font-size: clamp(68px, 9.7vw, 122px);
+        margin: 14px 0 16px;
+        max-width: 440px;
+      }
       .hero h1 span { color: var(--accent); font-style: italic; }
-      .hero p { color: var(--muted); max-width: 410px; font-size: 14px; }
-
-      .cta-row { display: flex; gap: 14px; margin-top: 28px; }
+      .hero-copy { color: var(--muted); max-width: 420px; font-size: 14px; }
+      .hero-cta { display: flex; gap: 12px; margin-top: 26px; }
       .btn {
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+        border: 1px solid #1d1411;
         padding: 12px 22px;
-        border: 1px solid #1d1713;
+        text-transform: uppercase;
+        letter-spacing: .13em;
+        font-size: 11px;
       }
-      .btn.primary { background: #18100e; color: #fff; }
+      .btn.primary { background: #1d1411; color: #fff; }
 
-      .hero-media {
-        position: relative;
-        min-height: 560px;
-      }
+      .hero-media { position: relative; min-height: 560px; }
       .hero-main {
-        width: min(92%, 470px);
-        margin-left: auto;
+        width: min(95%, 475px);
+        height: 530px;
         border-radius: 8px;
+        margin-left: auto;
         box-shadow: var(--shadow);
-        height: 520px;
       }
       .hero-overlay {
         position: absolute;
-        left: 20px;
-        bottom: 28px;
+        left: 26px;
+        bottom: 34px;
         width: min(48%, 220px);
-        border: 10px solid #f8f3ec;
-        box-shadow: var(--shadow);
+        border: 9px solid var(--paper);
         border-radius: 4px;
-        transform: rotate(-2deg);
+        box-shadow: var(--shadow);
+        transform: rotate(-3deg);
+      }
+      .hero-food {
+        position: absolute;
+        right: 12px;
+        top: 16px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 6px solid var(--paper);
+        box-shadow: var(--shadow);
       }
 
-      .section {
-        padding: 80px 0;
+      .quick-strip {
         border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 18px 0;
+        background: rgba(255,255,255,.35);
+      }
+      .quick-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .quick-info { display: flex; gap: 18px; color: #4e433b; font-size: 14px; }
+      .tags { display: flex; gap: 9px; flex-wrap: wrap; }
+      .tag {
+        background: #ece1d4;
+        border: 1px solid #dbc8b5;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        color: #5f5148;
       }
 
-      .story {
+      .two-col {
         display: grid;
-        grid-template-columns: 1.1fr 1fr;
+        grid-template-columns: 1.05fr 1fr;
         gap: 48px;
         align-items: center;
       }
-      .story .image { border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); min-height: 460px; }
-      .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: 10px; color: #9a8d80; margin-bottom: 12px; }
-      .story h2 { font-size: clamp(44px, 6vw, 64px); margin-bottom: 12px; }
-      .story p { color: var(--muted); font-size: 14px; max-width: 490px; }
-
-      .quote-card {
-        background: #f6f1e8;
-        padding: 18px 22px;
+      .image-card {
+        border-radius: 12px;
+        overflow: hidden;
         box-shadow: var(--shadow);
-        border-radius: 8px;
-        max-width: 260px;
-        margin-top: -34px;
-        margin-left: 24px;
-        position: relative;
+        min-height: 450px;
       }
-      .quote-card p { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 22px; font-style: italic; }
-      .quote-card small { color: var(--muted); text-transform: uppercase; font-size: 10px; letter-spacing: .12em; }
+      .copy h2 { font-size: clamp(46px, 6vw, 72px); margin-bottom: 14px; }
+      .copy p { color: var(--muted); font-size: 14px; max-width: 520px; }
 
-      .sustain-title {
-        text-align: center;
-        font-size: clamp(42px, 5vw, 58px);
-        margin-bottom: 34px;
-      }
-
-      .sustain-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 16px;
-      }
-
-      .panel {
-        background: #ebe2d6;
-        border-radius: 14px;
-        padding: 26px;
-      }
-      .panel h3 { font-size: 36px; margin-bottom: 10px; }
-      .panel p { margin-top: 0; color: var(--muted); font-size: 14px; }
-
-      .dark-panel {
-        border-radius: 14px;
-        background: var(--card);
-        color: #efe8dd;
-        padding: 26px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .dark-panel h3 { font-size: 36px; margin: 10px 0; }
-      .dark-panel p { color: #d5c7ba; font-size: 14px; max-width: 240px; }
+      .mission { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.32); }
 
       .menu-band {
-        background: var(--dark);
-        color: #f2e8de;
-        padding: 80px 0;
+        background: linear-gradient(180deg, #2f1712 0%, #240f0d 100%);
+        color: #f2e6d8;
       }
-      .menu-header {
+      .menu-head {
         display: flex;
-        align-items: flex-end;
         justify-content: space-between;
-        margin-bottom: 28px;
+        align-items: flex-end;
+        margin-bottom: 24px;
       }
-      .menu-header h2 { font-size: clamp(44px, 7vw, 72px); }
-      .menu-header a { text-transform: uppercase; letter-spacing: .16em; font-size: 11px; }
-
-      .cards {
+      .menu-head h2 { font-size: clamp(50px, 7vw, 84px); }
+      .menu-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
+        gap: 16px;
       }
-      .card {
+      .menu-item {
         background: rgba(255,255,255,.05);
         border: 1px solid rgba(255,255,255,.15);
-        border-radius: 10px;
-        padding: 12px;
+        border-radius: 12px;
+        padding: 20px;
       }
-      .card img { border-radius: 8px; height: 220px; }
-      .card h3 { font-size: 32px; margin: 14px 0 6px; }
-      .card p { margin: 0; color: #ccb9a7; font-size: 13px; }
+      .menu-item h3 { font-size: 36px; margin-bottom: 8px; }
+      .menu-item p { color: #d5c1ad; font-size: 14px; }
 
-      .newsletter {
-        text-align: center;
-        padding: 90px 0 72px;
+      .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
       }
-      .newsletter h2 { font-size: clamp(44px, 6vw, 64px); margin-bottom: 10px; }
-      .newsletter p { color: var(--muted); font-size: 14px; max-width: 600px; margin: 0 auto 26px; }
+      .card {
+        background: #efe4d7;
+        border-radius: 11px;
+        border: 1px solid #ddccbb;
+        overflow: hidden;
+      }
+      .card img { height: 180px; }
+      .card-body { padding: 14px; }
+      .card-body h4 { font-size: 32px; margin-bottom: 6px; }
+      .card-body p { color: #62564e; font-size: 13px; }
+
+      .pods {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        align-items: center;
+        border-top: 1px solid var(--line);
+      }
+      .pods h2 { font-size: clamp(48px, 7vw, 82px); margin-bottom: 12px; }
+      .pods p { color: var(--muted); max-width: 520px; }
+
+      .testimonials {
+        border-top: 1px solid var(--line);
+        background: rgba(255,255,255,.3);
+      }
+      .testimonial-grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .quote {
+        padding: 22px;
+        background: #f8f1e8;
+        border-radius: 10px;
+        border: 1px solid #e2d5c6;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+      }
+
+      .newsletter { text-align: center; }
+      .newsletter h2 { font-size: clamp(52px, 7vw, 76px); margin-bottom: 8px; }
+      .newsletter p { color: var(--muted); }
       .newsletter form {
+        margin-top: 24px;
         display: inline-flex;
         border: 1px solid var(--line);
         background: var(--paper);
       }
       .newsletter input {
+        min-width: min(400px, 56vw);
         border: none;
         background: transparent;
-        min-width: min(380px, 56vw);
         padding: 14px;
-        font: inherit;
       }
       .newsletter button {
         border: none;
-        background: #1d120f;
+        background: #1c110e;
         color: #fff;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: .16em;
         padding: 0 28px;
+        text-transform: uppercase;
+        letter-spacing: .13em;
+        font-size: 11px;
       }
 
       footer {
         border-top: 1px solid var(--line);
+        padding: 42px 0 24px;
         text-align: center;
-        padding: 38px 0 22px;
       }
-      footer .links {
+      footer .footer-links {
         list-style: none;
         padding: 0;
         margin: 18px 0;
         display: flex;
-        justify-content: center;
         gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
         text-transform: uppercase;
-        font-size: 11px;
         letter-spacing: .1em;
-        color: var(--muted);
+        font-size: 11px;
+        color: #7f7167;
       }
-      footer small { color: #8e8276; font-size: 11px; }
+      footer small { color: #8e7f72; }
 
-      @media (max-width: 960px) {
-        .hero, .story, .sustain-grid, .cards { grid-template-columns: 1fr; }
+      @media (max-width: 980px) {
+        .hero, .two-col, .pods, .menu-grid, .featured-grid, .testimonial-grid { grid-template-columns: 1fr; }
         .hero-main { margin: 0; width: 100%; }
-        .hero-overlay { left: 8px; bottom: 10px; }
-        .topbar { flex-direction: column; gap: 12px; }
-        .nav-links { flex-wrap: wrap; justify-content: center; }
+        .hero-overlay { left: 10px; }
+        .hero-food { right: auto; left: 14px; top: 14px; }
+        .nav { flex-direction: column; }
       }
     </style>
   </head>
   <body>
-    <header class="wrap topbar">
-      <div class="brand">Southwest Coffee Roasters</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu">Subscriptions</a></li>
-          <li><a href="#featured">Curated Goods</a></li>
-          <li><a href="#story">Our Story</a></li>
-        </ul>
-      </nav>
-      <a href="#contact" aria-label="Contact">⌂</a>
+    <header>
+      <div class="container nav">
+        <div class="brand">Southwest Coffee Roasters</div>
+        <nav aria-label="Main navigation">
+          <ul class="links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#coffee">Coffee</a></li>
+            <li><a href="#pods">Work Pods</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="order-btn" href="#menu">Order Now</a>
+      </div>
     </header>
 
     <main>
-      <section id="home" class="wrap hero">
+      <section class="container hero">
         <div>
-          <span class="tag">Curated in Chennai</span>
+          <span class="chip">Curated in Chennai</span>
           <h1>Where Every Sip Feels Like <span>Home</span></h1>
-          <p>
-            An intentional composition of desert warmth and artisanal precision.
-            We don't just roast beans; we bottle the spirit of the high desert.
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="#menu">Explore Roasts</a>
-            <a class="btn" href="#story">The Process</a>
+          <p class="hero-copy">Artisanal coffee, handcrafted meals, and a cozy space to meet, work, and unwind.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#menu">View Menu</a>
+            <a class="btn" href="#contact">Visit Us</a>
           </div>
         </div>
         <div class="hero-media">
-          <img class="hero-main" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Latte art in ceramic cup" />
-          <img class="hero-overlay" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?auto=format&fit=crop&w=600&q=80" alt="Fresh roasted coffee beans" />
+          <img class="hero-main" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Coffee latte" />
+          <img class="hero-overlay" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?auto=format&fit=crop&w=600&q=80" alt="Coffee beans" />
+          <img class="hero-food" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=300&q=80" alt="Food dish" />
         </div>
       </section>
 
-      <section id="story" class="section">
-        <div class="wrap story">
-          <div>
-            <div class="image">
-              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" alt="Cafe interior with warm seating" />
-            </div>
-            <div class="quote-card">
-              <p>"Quality is the silence between the notes."</p>
-              <small>— Southwest Roasters</small>
-            </div>
+      <section class="quick-strip">
+        <div class="container quick-wrap">
+          <div class="quick-info">
+            <span><strong>Location:</strong> Nungambakkam, Chennai</span>
+            <span><strong>Timings:</strong> 7 AM – 11 PM</span>
           </div>
-          <div>
-            <p class="eyebrow">Our Heritage</p>
-            <h2>Born in the High Desert</h2>
-            <p>
-              Our journey began amidst the red rocks and saguaros. We found that
-              the arid air and high-altitude provided the perfect atmosphere for
-              slow, intentional roasting.
-            </p>
-            <p>
-              Every batch is curated to reflect the earthy, smoky, and floral
-              notes of the Southwest terrain, ensuring that every cup is an echo
-              of our landscape.
-            </p>
+          <div class="tags">
+            <span class="tag">Work-friendly</span>
+            <span class="tag">Free WiFi</span>
+            <span class="tag">Cozy seating</span>
+            <span class="tag">Breakfast & brunch</span>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="wrap">
-          <h2 class="sustain-title">Sustainability is our secret ingredient</h2>
-          <div class="sustain-grid">
-            <article class="panel">
-              <h3>Direct Trade Relationships</h3>
-              <p>
-                We partner directly with small-lot farmers, ensuring equitable
-                pay and environmental stewardship at every origin point.
-              </p>
-              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1100&q=80" alt="Green coffee cherries on branch" />
-            </article>
-            <article class="dark-panel">
-              <h3>Zero-Waste Packaging</h3>
-              <p>
-                Compostable bags and recycled materials reduce our care about the
-                land that grows our joy.
-              </p>
-            </article>
+      <section id="about" class="section container two-col">
+        <div class="copy">
+          <p class="eyebrow">Our Story</p>
+          <h2>Our Story</h2>
+          <p>
+            Founded with a passion for speciality coffee, Southwest Coffee Roasters brings together carefully sourced beans and thoughtfully crafted dishes. Built as a space for both relaxation and productivity, it's a place where conversations, ideas, and coffee come together.
+          </p>
+          <p style="margin-top: 12px; color: var(--muted);">Founder trained in speciality coffee + modern café concept.</p>
+        </div>
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" alt="Cafe interior" />
+        </div>
+      </section>
+
+      <section class="section mission">
+        <div class="container two-col">
+          <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80" alt="Coffee and food at cafe" />
+          </div>
+          <div class="copy">
+            <p class="eyebrow">Our Mission</p>
+            <h2>Our Mission</h2>
+            <p>To create a welcoming space that blends great coffee, quality food, and a comfortable work-friendly environment. We focus on fresh ingredients, balanced flavors, and a community-driven experience.</p>
           </div>
         </div>
       </section>
 
-      <section id="menu" class="menu-band">
-        <div class="wrap">
-          <div class="menu-header">
+      <section id="menu" class="section menu-band">
+        <div class="container">
+          <div class="menu-head">
             <div>
-              <p class="eyebrow">The Daily Gallery</p>
-              <h2>Artisan Curations</h2>
+              <p class="eyebrow">Signature Menu</p>
+              <h2>What We Serve</h2>
             </div>
-            <a href="#">View full menu →</a>
           </div>
-          <div class="cards">
-            <article class="card" id="featured">
-              <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80" alt="Signature drink with garnish" />
-              <h3>Desert Sage Tonic</h3>
-              <p>Cold brew infused with a botanical sage and lavender spritz.</p>
-            </article>
-            <article class="card">
-              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Mesquite smoked latte" />
-              <h3>Mesquite Smoked Latte</h3>
-              <p>Espresso with mesquite-honey reduction and smoked sea salt.</p>
-            </article>
-            <article class="card">
-              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Pour-over coffee" />
-              <h3>Pinon Roast Batch</h3>
-              <p>Our signature medium-dark roast with notes of pine and cedar.</p>
-            </article>
+          <div class="menu-grid">
+            <article class="menu-item"><h3>Specialty Coffee</h3><p>Espresso, Cappuccino, Latte</p></article>
+            <article class="menu-item"><h3>Iced Coffees</h3><p>Biscoff, Tiramisu, Nutella</p></article>
+            <article class="menu-item"><h3>Breakfast Plates</h3><p>Hearty and fresh breakfast classics</p></article>
+            <article class="menu-item"><h3>Continental & Italian Mains</h3><p>Comfort mains with modern café plating</p></article>
+            <article class="menu-item"><h3>Vegan Options</h3><p>Plant-forward bowls, toasts and mains</p></article>
+            <article class="menu-item"><h3>Desserts</h3><p>Cheesecakes, brownies and plated sweets</p></article>
           </div>
         </div>
       </section>
 
-      <section class="newsletter wrap" id="contact">
-        <p class="eyebrow">✉</p>
-        <h2>Join the Gallery Circle</h2>
-        <p>
-          Be the first to experience our seasonal harvests and exclusive
-          community cupping events.
-        </p>
+      <section class="section container" id="coffee">
+        <div class="menu-head">
+          <div>
+            <p class="eyebrow">Featured Items</p>
+            <h2 style="font-size: clamp(48px, 7vw, 82px);">Popular Picks</h2>
+          </div>
+        </div>
+        <div class="featured-grid">
+          <article class="card"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80" alt="Tiramisu Iced Latte" /><div class="card-body"><h4>Tiramisu Iced Latte</h4><p>Velvety iced latte finished with dessert notes.</p></div></article>
+          <article class="card"><img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc25?auto=format&fit=crop&w=700&q=80" alt="Spanish Latte" /><div class="card-body"><h4>Spanish Latte</h4><p>Condensed milk sweetness with bold espresso.</p></div></article>
+          <article class="card"><img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=700&q=80" alt="Peri Peri Fries" /><div class="card-body"><h4>Peri Peri Fries</h4><p>Crisp fries tossed in house peri peri spice.</p></div></article>
+          <article class="card"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=700&q=80" alt="Tiramisu Cheesecake" /><div class="card-body"><h4>Tiramisu Cheesecake</h4><p>Rich coffee-infused cheesecake with cocoa dust.</p></div></article>
+        </div>
+      </section>
+
+      <section id="pods" class="section container pods">
+        <div>
+          <p class="eyebrow">Work Pods</p>
+          <h2>Work. Meet. Create.</h2>
+          <p>Private work pods designed for focused sessions, meetings, and creative work. Fully redeemable on food and beverages.</p>
+          <div style="margin-top:18px;"><a class="btn primary" href="#contact">Book a Pod</a></div>
+        </div>
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80" alt="Work pod style seating" />
+        </div>
+      </section>
+
+      <section class="section testimonials" id="blog">
+        <div class="container">
+          <p class="eyebrow">Testimonials</p>
+          <h2 style="font-size: clamp(48px, 7vw, 82px);">Loved by Chennai</h2>
+          <div class="testimonial-grid">
+            <article class="quote">“Great place for a peaceful retreat with friends.”</article>
+            <article class="quote">“Amazing breakfast spread and ambience.”</article>
+            <article class="quote">“Perfect spot to work and relax.”</article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section newsletter container" id="contact">
+        <p class="eyebrow">Join Our Circle</p>
+        <h2>Visit Southwest Coffee Roasters</h2>
+        <p>Phone: +91 00000 00000 · Nungambakkam, Chennai · Instagram: @southwestcoffeeroasters</p>
         <form>
           <input type="email" placeholder="Your email address" aria-label="Your email address" />
           <button type="submit">Subscribe</button>
@@ -389,15 +448,18 @@
     </main>
 
     <footer>
-      <div class="brand">Southwest Coffee Roasters</div>
-      <ul class="links">
-        <li><a href="#">Sustainability</a></li>
-        <li><a href="#">Wholesale</a></li>
-        <li><a href="#">Brewing Guides</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
-      <small>© 2026 Southwest Coffee Roasters, crafted with intention.</small>
+      <div class="container">
+        <div class="brand">Southwest Coffee Roasters</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#pods">Work Pods</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+        </ul>
+        <small>© 2026 Southwest Coffee Roasters. Crafted with intention.</small>
+      </div>
     </footer>
   </body>
 </html>
