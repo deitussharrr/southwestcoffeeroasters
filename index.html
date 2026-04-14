@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Southwest Coffee Roasters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f3eee5;
+        --paper: #f8f3ec;
+        --text: #171311;
+        --muted: #6a625b;
+        --accent: #a55024;
+        --dark: #26120f;
+        --card: #2f1714;
+        --line: #ddd3c5;
+        --shadow: 0 14px 30px rgba(39, 18, 10, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        line-height: 1.5;
+      }
+
+      img { width: 100%; display: block; object-fit: cover; }
+      a { color: inherit; text-decoration: none; }
+
+      .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 0;
+        font-size: 14px;
+      }
+
+      .brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        letter-spacing: 0.03em;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+        padding-bottom: 80px;
+      }
+
+      .tag {
+        display: inline-block;
+        border-radius: 100px;
+        background: #dceac0;
+        padding: 6px 13px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 0.95; margin: 0; font-weight: 500; }
+      .hero h1 { font-size: clamp(64px, 9vw, 110px); margin: 16px 0; max-width: 420px; }
+      .hero h1 span { color: var(--accent); font-style: italic; }
+      .hero p { color: var(--muted); max-width: 410px; font-size: 14px; }
+
+      .cta-row { display: flex; gap: 14px; margin-top: 28px; }
+      .btn {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 12px 22px;
+        border: 1px solid #1d1713;
+      }
+      .btn.primary { background: #18100e; color: #fff; }
+
+      .hero-media {
+        position: relative;
+        min-height: 560px;
+      }
+      .hero-main {
+        width: min(92%, 470px);
+        margin-left: auto;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        height: 520px;
+      }
+      .hero-overlay {
+        position: absolute;
+        left: 20px;
+        bottom: 28px;
+        width: min(48%, 220px);
+        border: 10px solid #f8f3ec;
+        box-shadow: var(--shadow);
+        border-radius: 4px;
+        transform: rotate(-2deg);
+      }
+
+      .section {
+        padding: 80px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .story {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .story .image { border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); min-height: 460px; }
+      .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: 10px; color: #9a8d80; margin-bottom: 12px; }
+      .story h2 { font-size: clamp(44px, 6vw, 64px); margin-bottom: 12px; }
+      .story p { color: var(--muted); font-size: 14px; max-width: 490px; }
+
+      .quote-card {
+        background: #f6f1e8;
+        padding: 18px 22px;
+        box-shadow: var(--shadow);
+        border-radius: 8px;
+        max-width: 260px;
+        margin-top: -34px;
+        margin-left: 24px;
+        position: relative;
+      }
+      .quote-card p { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 22px; font-style: italic; }
+      .quote-card small { color: var(--muted); text-transform: uppercase; font-size: 10px; letter-spacing: .12em; }
+
+      .sustain-title {
+        text-align: center;
+        font-size: clamp(42px, 5vw, 58px);
+        margin-bottom: 34px;
+      }
+
+      .sustain-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 16px;
+      }
+
+      .panel {
+        background: #ebe2d6;
+        border-radius: 14px;
+        padding: 26px;
+      }
+      .panel h3 { font-size: 36px; margin-bottom: 10px; }
+      .panel p { margin-top: 0; color: var(--muted); font-size: 14px; }
+
+      .dark-panel {
+        border-radius: 14px;
+        background: var(--card);
+        color: #efe8dd;
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .dark-panel h3 { font-size: 36px; margin: 10px 0; }
+      .dark-panel p { color: #d5c7ba; font-size: 14px; max-width: 240px; }
+
+      .menu-band {
+        background: var(--dark);
+        color: #f2e8de;
+        padding: 80px 0;
+      }
+      .menu-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 28px;
+      }
+      .menu-header h2 { font-size: clamp(44px, 7vw, 72px); }
+      .menu-header a { text-transform: uppercase; letter-spacing: .16em; font-size: 11px; }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        background: rgba(255,255,255,.05);
+        border: 1px solid rgba(255,255,255,.15);
+        border-radius: 10px;
+        padding: 12px;
+      }
+      .card img { border-radius: 8px; height: 220px; }
+      .card h3 { font-size: 32px; margin: 14px 0 6px; }
+      .card p { margin: 0; color: #ccb9a7; font-size: 13px; }
+
+      .newsletter {
+        text-align: center;
+        padding: 90px 0 72px;
+      }
+      .newsletter h2 { font-size: clamp(44px, 6vw, 64px); margin-bottom: 10px; }
+      .newsletter p { color: var(--muted); font-size: 14px; max-width: 600px; margin: 0 auto 26px; }
+      .newsletter form {
+        display: inline-flex;
+        border: 1px solid var(--line);
+        background: var(--paper);
+      }
+      .newsletter input {
+        border: none;
+        background: transparent;
+        min-width: min(380px, 56vw);
+        padding: 14px;
+        font: inherit;
+      }
+      .newsletter button {
+        border: none;
+        background: #1d120f;
+        color: #fff;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .16em;
+        padding: 0 28px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        text-align: center;
+        padding: 38px 0 22px;
+      }
+      footer .links {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: .1em;
+        color: var(--muted);
+      }
+      footer small { color: #8e8276; font-size: 11px; }
+
+      @media (max-width: 960px) {
+        .hero, .story, .sustain-grid, .cards { grid-template-columns: 1fr; }
+        .hero-main { margin: 0; width: 100%; }
+        .hero-overlay { left: 8px; bottom: 10px; }
+        .topbar { flex-direction: column; gap: 12px; }
+        .nav-links { flex-wrap: wrap; justify-content: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap topbar">
+      <div class="brand">Southwest Coffee Roasters</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Subscriptions</a></li>
+          <li><a href="#featured">Curated Goods</a></li>
+          <li><a href="#story">Our Story</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" aria-label="Contact">⌂</a>
+    </header>
+
+    <main>
+      <section id="home" class="wrap hero">
+        <div>
+          <span class="tag">Curated in Chennai</span>
+          <h1>Where Every Sip Feels Like <span>Home</span></h1>
+          <p>
+            An intentional composition of desert warmth and artisanal precision.
+            We don't just roast beans; we bottle the spirit of the high desert.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#menu">Explore Roasts</a>
+            <a class="btn" href="#story">The Process</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img class="hero-main" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Latte art in ceramic cup" />
+          <img class="hero-overlay" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?auto=format&fit=crop&w=600&q=80" alt="Fresh roasted coffee beans" />
+        </div>
+      </section>
+
+      <section id="story" class="section">
+        <div class="wrap story">
+          <div>
+            <div class="image">
+              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" alt="Cafe interior with warm seating" />
+            </div>
+            <div class="quote-card">
+              <p>"Quality is the silence between the notes."</p>
+              <small>— Southwest Roasters</small>
+            </div>
+          </div>
+          <div>
+            <p class="eyebrow">Our Heritage</p>
+            <h2>Born in the High Desert</h2>
+            <p>
+              Our journey began amidst the red rocks and saguaros. We found that
+              the arid air and high-altitude provided the perfect atmosphere for
+              slow, intentional roasting.
+            </p>
+            <p>
+              Every batch is curated to reflect the earthy, smoky, and floral
+              notes of the Southwest terrain, ensuring that every cup is an echo
+              of our landscape.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <h2 class="sustain-title">Sustainability is our secret ingredient</h2>
+          <div class="sustain-grid">
+            <article class="panel">
+              <h3>Direct Trade Relationships</h3>
+              <p>
+                We partner directly with small-lot farmers, ensuring equitable
+                pay and environmental stewardship at every origin point.
+              </p>
+              <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1100&q=80" alt="Green coffee cherries on branch" />
+            </article>
+            <article class="dark-panel">
+              <h3>Zero-Waste Packaging</h3>
+              <p>
+                Compostable bags and recycled materials reduce our care about the
+                land that grows our joy.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-band">
+        <div class="wrap">
+          <div class="menu-header">
+            <div>
+              <p class="eyebrow">The Daily Gallery</p>
+              <h2>Artisan Curations</h2>
+            </div>
+            <a href="#">View full menu →</a>
+          </div>
+          <div class="cards">
+            <article class="card" id="featured">
+              <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80" alt="Signature drink with garnish" />
+              <h3>Desert Sage Tonic</h3>
+              <p>Cold brew infused with a botanical sage and lavender spritz.</p>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Mesquite smoked latte" />
+              <h3>Mesquite Smoked Latte</h3>
+              <p>Espresso with mesquite-honey reduction and smoked sea salt.</p>
+            </article>
+            <article class="card">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Pour-over coffee" />
+              <h3>Pinon Roast Batch</h3>
+              <p>Our signature medium-dark roast with notes of pine and cedar.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter wrap" id="contact">
+        <p class="eyebrow">✉</p>
+        <h2>Join the Gallery Circle</h2>
+        <p>
+          Be the first to experience our seasonal harvests and exclusive
+          community cupping events.
+        </p>
+        <form>
+          <input type="email" placeholder="Your email address" aria-label="Your email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand">Southwest Coffee Roasters</div>
+      <ul class="links">
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Wholesale</a></li>
+        <li><a href="#">Brewing Guides</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+      <small>© 2026 Southwest Coffee Roasters, crafted with intention.</small>
+    </footer>
+  </body>
+</html>
